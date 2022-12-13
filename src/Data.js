@@ -1,27 +1,23 @@
 import React from "react";
-
-import Typography from "@mui/material/Typography";
-
-import Card from "@mui/material/Card";
-
-import CardContent from "@mui/material/CardContent";
+import "./styles.css";
 
 function Data({ data }) {
-  return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <h1>Image List</h1>
+  if (data) {
+    return (
+      <div>
+        <h1 className="subz">Image List</h1>
+
         {data &&
           data.map((item, id) => (
-            <Typography key={item.id}>
-              <img id="img1" src={item.img1.value} />
-              <img id="img1" src={item.img2.value} />
-              <img id="img1" src={item.img3.value} />
-            </Typography>
+            <div key={item.id}>
+              <img className="img" src={item.img1.value} alt="sa" />
+              <img className="img" src={item.img2.value} alt="a" />
+              <img className="img" src={item.img3.value} alt="a" />
+            </div>
           ))}
-      </CardContent>
-    </Card>
-  );
+      </div>
+    );
+  }
 }
 
 export default Data;
